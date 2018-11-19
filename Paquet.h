@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include <stdlib>
+
+#include "Carte.h"
 
 class Paquet {
 
@@ -10,7 +13,7 @@ public:
   Paquet(); //constructeur
 
 private:
-  //champs privés
+  std::list<Carte> cartes;
 
 }
 

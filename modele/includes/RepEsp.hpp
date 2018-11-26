@@ -1,12 +1,9 @@
 #ifndef _REPESP_H_
 #define _REPESP_H_
 
-#include <iostream>
-#include <string>
-#include <stdlib>
-
-#include "Paquet.h"
-#include "Carte.h"
+#include "Paquet.hpp"
+#include "Paquets.hpp"
+#include "Carte.hpp"
 
 class RepEsp {
 
@@ -23,7 +20,7 @@ public:
   void supprimerPaquet(Paquet paquet);
 
 private:
-  Paquets paquets;
+  Paquets *paquets;
 
 };
 

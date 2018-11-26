@@ -1,7 +1,7 @@
 #ifndef _CARTE_H_
 #define _CARTE_H_
 
-#include <iostream>
+#include <cstdlib>
 #include <string>
 
 class Carte {

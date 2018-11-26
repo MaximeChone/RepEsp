@@ -1,9 +1,9 @@
 CC = g++
 CFLAGS = -Wall
 EXEC_NAME = RepEsp
-INCLUDES = modele/includes/Carte.h modele/includes/Paquet.h modele/includes/PaquetFacile.h modele/includes/PaquetMoyen.h modele/includes/PaquetDifficile.h modele/includes/Paquets.h modele/includes/RepEsp.h
+INCLUDES = modele/includes/Carte.hpp modele/includes/Paquet.hpp modele/includes/PaquetFacile.hpp modele/includes/PaquetMoyen.hpp modele/includes/PaquetDifficile.hpp modele/includes/Paquets.hpp modele/includes/RepEsp.hpp modele/includes/main.hpp
 LIBS =
-OBJ_FILES = Carte.o Paquet.o PaquetFacile.o PaquetMoyen.o PaquetDifficile.o Paquets.o RepEsp.o
+OBJ_FILES = Carte.o Paquet.o PaquetFacile.o PaquetMoyen.o PaquetDifficile.o Paquets.o RepEsp.o main.o
 
 all : $(EXEC_NAME)
 

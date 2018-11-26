@@ -1,4 +1,4 @@
-#include "../includes/Carte.h"
+#include "../includes/Carte.hpp"
 
 using namespace std;
 

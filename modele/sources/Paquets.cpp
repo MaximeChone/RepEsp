@@ -1,4 +1,4 @@
-#include "../includes/Paquets.h"
+#include "../includes/Paquets.hpp"
 
 Paquets::Paquets() {
   paquetFacile = new PaquetFacile();

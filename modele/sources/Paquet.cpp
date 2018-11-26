@@ -1,4 +1,4 @@
-#include "../includes/Paquet.h"
+#include "../includes/Paquet.hpp"
 
 using namespace std;
 

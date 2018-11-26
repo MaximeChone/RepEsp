@@ -3,7 +3,9 @@
 
 #include <iostream>
 #include <string>
-#include <stdlib>
+#include <stdlib.h>
+
+#include "Paquet.hpp"
 
 class PaquetDifficile : public Paquet {
 

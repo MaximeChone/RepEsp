@@ -1,12 +1,9 @@
 #ifndef _PAQUET_H_
 #define _PAQUET_H_
 
-#include <iostream>
-#include <string>
-#include <stdlib.h>
 #include <list>
 
-#include "Carte.h"
+#include "Carte.hpp"
 
 class Paquet {
 

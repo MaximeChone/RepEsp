@@ -1,11 +1,7 @@
 #ifndef _PAQUETFACILE_H_
 #define _PAQUETFACILE_H_
 
-#include <iostream>
-#include <string>
-#include <stdlib>
-
-#include "Paquet.h"
+#include "Paquet.hpp"
 
 class PaquetFacile : public Paquet {
 

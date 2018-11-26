@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -Wall
+CFLAGS = -Wall -std=c++11
 EXEC_NAME = RepEsp
 INCLUDES = modele/includes/Carte.hpp modele/includes/Paquet.hpp modele/includes/PaquetFacile.hpp modele/includes/PaquetMoyen.hpp modele/includes/PaquetDifficile.hpp modele/includes/Paquets.hpp modele/includes/RepEsp.hpp modele/includes/main.hpp
 LIBS =

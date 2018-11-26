@@ -4,8 +4,7 @@ using namespace std;
 
 int main (int argc, char *argv[]) {
   RepEsp *re = new RepEsp();
-
-  cout << "hello" << endl;
+  re->afficherCartes();
 
   return EXIT_SUCCESS;
 }

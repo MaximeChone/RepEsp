@@ -9,6 +9,9 @@
 
 class PaquetDifficile : public Paquet {
 
+public:
+  PaquetDifficile();
+
 };
 
 #endif

@@ -1,3 +1,5 @@
 #include "../includes/PaquetDifficile.hpp"
 
-using namespace std;
+PaquetDifficile::PaquetDifficile() {
+  cartes.push_front(new Carte("rectoDDDFFDFDDDD", "verso2"));
+}

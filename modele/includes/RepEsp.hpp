@@ -18,6 +18,7 @@ public:
   void renommerPaquet(Paquet paquet, std::string nom);
   void supprimerCarte(Paquet paquet, Carte carte);
   void supprimerPaquet(Paquet paquet);
+  void afficherCartes();
 
 private:
   Paquets *paquets;

@@ -9,9 +9,10 @@ class Paquet {
 
 public:
   Paquet(); //constructeur
+  void afficherCartes();
 
-private:
-  std::list<Carte> cartes;
+protected:
+  std::list<Carte*> cartes;
 
 };
 

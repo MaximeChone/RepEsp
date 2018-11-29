@@ -1,9 +1,9 @@
 #ifndef _PAQUETFACILE_H_
 #define _PAQUETFACILE_H_
 
-#include "Paquet.hpp"
+#include "PaquetEvalue.hpp"
 
-class PaquetFacile : public Paquet {
+class PaquetFacile : public PaquetEvalue {
 
 };
 

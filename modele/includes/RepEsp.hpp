@@ -13,12 +13,13 @@ public:
   void importerPaquet(Paquet paquet);
   void exporterPaquet(Paquet paquet);
   void ajouterPaquet(std::string nom);
-  void ajouterCarte(Paquet paquet, std::string recto, std::string verso);
+  void ajouterCarte(std::string paquet, std::string recto, std::string verso);
   void modifierCarte(Paquet paquet, Carte carte, std::string recto, std::string verso);
   void renommerPaquet(Paquet paquet, std::string nom);
   void supprimerCarte(Paquet paquet, Carte carte);
   void supprimerPaquet(Paquet paquet);
-  void afficherCartes();
+  void afficherCartes(std::string nomPaquet);
+  void afficherPaquets();
 
 private:
   Paquets *paquets;

@@ -1,24 +1,21 @@
 #ifndef _PAQUETS_H_
 #define _PAQUETS_H_
 
-#include <iostream>
+#include <list>
 
-#include "PaquetFacile.hpp"
-#include "PaquetMoyen.hpp"
-#include "PaquetDifficile.hpp"
+#include "Paquet.hpp"
 
 class Paquets {
 
 public:
   Paquets(); //constructeur
-  Paquets(std::string nom);
-  void afficherCartes();
+  void ajouterPaquet(std::string nom);
+  void ajouterCarte(std::string paquet, std::string recto, std::string verso);
+  void afficherCartes(std::string nomPaquet);
+  void afficherPaquets();
 
 private:
-  std::string nom;
-  PaquetFacile *paquetFacile;
-  PaquetMoyen *paquetMoyen;
-  PaquetDifficile *paquetDifficile;
+  std::list<Paquet*> paquets;
 
 };
 

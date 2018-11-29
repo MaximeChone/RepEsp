@@ -1,13 +1,24 @@
 #include "../includes/Paquet.hpp"
 
-using namespace std;
-
 Paquet::Paquet() {
-  cartes.push_front(new Carte("recto", "verso2"));
+  paquetFacile = new PaquetFacile();
+  paquetMoyen = new PaquetMoyen();
+  paquetDifficile = new PaquetDifficile();
+}
+
+Paquet::Paquet(std::string nom) {
+  new (this) Paquet();
+  this->nom = nom;
+}
+
+void Paquet::ajouterCarte(std::string recto, std::string verso) {
+  paquetFacile->ajouterCarte(recto, verso);
 }
 
 void Paquet::afficherCartes() {
-  for (Carte *c : cartes) {
-    c->afficher();
-  }
+  paquetFacile->afficherCartes();
+}
+
+std::string Paquet::getNom() {
+  return nom;
 }

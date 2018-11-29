@@ -1,9 +1,9 @@
 #ifndef _PAQUETMOYEN_H_
 #define _PAQUETMOYEN_H_
 
-#include "Paquet.hpp"
+#include "PaquetEvalue.hpp"
 
-class PaquetMoyen : public Paquet {
+class PaquetMoyen : public PaquetEvalue {
 
 };
 

@@ -10,6 +10,8 @@ class PaquetEvalue {
 public:
   PaquetEvalue();
   void ajouterCarte(std::string recto, std::string verso);
+  void ajouterCarte(Carte *c);
+  void modifierCarte(Carte carte, std::string recto, std::string verso);
   void afficherCartes();
 
 protected:

@@ -9,16 +9,18 @@ class RepEsp {
 
 public:
   RepEsp(); //constructeur
-  void consulterPaquet();
-  void importerPaquet(Paquet paquet);
-  void exporterPaquet(Paquet paquet);
+  void consulterPaquet(); //todo
+  void importerPaquet(Paquet paquet); //todo
+  void exporterPaquet(Paquet paquet); //todo
   void ajouterPaquet(std::string nom);
-  void ajouterCarte(std::string paquet, std::string recto, std::string verso);
-  void modifierCarte(Paquet paquet, Carte carte, std::string recto, std::string verso);
-  void renommerPaquet(Paquet paquet, std::string nom);
-  void supprimerCarte(Paquet paquet, Carte carte);
-  void supprimerPaquet(Paquet paquet);
-  void afficherCartes(std::string nomPaquet);
+  void ajouterPaquet(Paquet *p);
+  void ajouterCarte(Paquet paquet, std::string recto, std::string verso);
+  void ajouterCarte(Paquet paquet, Carte *c);
+  void modifierCarte(Paquet paquet, Carte carte, std::string recto, std::string verso); //todo
+  void renommerPaquet(Paquet paquet, std::string nom); //todo
+  void supprimerCarte(Paquet paquet, Carte carte); //todo
+  void supprimerPaquet(Paquet paquet); //todo
+  void afficherCartes(Paquet nomPaquet);
   void afficherPaquets();
 
 private:

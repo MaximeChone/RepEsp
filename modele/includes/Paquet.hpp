@@ -14,8 +14,11 @@ public:
   Paquet(); //constructeur
   Paquet(std::string nom);
   void ajouterCarte(std::string recto, std::string verso);
+  void ajouterCarte(Carte *c);
+  void modifierCarte(Carte carte, std::string recto, std::string verso);
   void afficherCartes();
   std::string getNom();
+  bool equals(Paquet p);
 
 protected:
   std::string nom;

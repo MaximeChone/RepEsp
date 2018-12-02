@@ -36,6 +36,38 @@ void Paquets::modifierCarte(Paquet paquet, Carte carte, std::string recto, std::
   }
 }
 
+void Paquets::renommerPaquet(Paquet paquet, std::string nom) {
+  for (Paquet *p : paquets) {
+    if (p->equals(paquet)) {
+      p->setNom(nom);
+    }
+  }
+}
+
+void Paquets::supprimerCarte(Paquet paquet, Carte carte) {
+  for (Paquet *p : paquets) {
+    if (p->equals(paquet)) {
+      p->supprimerCarte(carte);
+    }
+  }
+}
+
+void Paquets::supprimerPaquet(Paquet paquet) {
+  int i = 0, indiceASupprimer = -1;
+  for (Paquet *p : paquets) {
+    if (p->equals(paquet)) {
+      indiceASupprimer = i;
+    }
+    i++;
+  }
+
+  if (indiceASupprimer != -1) {
+    std::list<Paquet*>::iterator it = paquets.begin();
+    advance(it, indiceASupprimer);
+    paquets.erase(it);
+  }
+}
+
 void Paquets::afficherCartes(Paquet paquet) {
   for (Paquet *p : paquets) {
     if (p->equals(paquet)) {

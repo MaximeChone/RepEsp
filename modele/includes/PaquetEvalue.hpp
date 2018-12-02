@@ -12,6 +12,7 @@ public:
   void ajouterCarte(std::string recto, std::string verso);
   void ajouterCarte(Carte *c);
   void modifierCarte(Carte carte, std::string recto, std::string verso);
+  void supprimerCarte(Carte carte);
   void afficherCartes();
 
 protected:

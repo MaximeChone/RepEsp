@@ -15,6 +15,9 @@ public:
   void ajouterCarte(Paquet paquet, std::string recto, std::string verso);
   void ajouterCarte(Paquet paquet, Carte *c);
   void modifierCarte(Paquet paquet, Carte carte, std::string recto, std::string verso);
+  void renommerPaquet(Paquet paquet, std::string nom);
+  void supprimerCarte(Paquet paquet, Carte carte);
+  void supprimerPaquet(Paquet paquet);
   void afficherCartes(Paquet paquet);
   void afficherPaquets();
 

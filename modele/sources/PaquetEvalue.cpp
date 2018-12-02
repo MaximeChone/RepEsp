@@ -22,6 +22,22 @@ void PaquetEvalue::modifierCarte(Carte carte, std::string recto, std::string ver
   }
 }
 
+void PaquetEvalue::supprimerCarte(Carte carte) {
+  int i = 0, indiceASupprimer = -1;
+  for (Carte *c : cartes) {
+    if (c->equals(carte)) {
+      indiceASupprimer = i;
+    }
+    i++;
+  }
+
+  if (indiceASupprimer != -1) {
+    std::list<Carte*>::iterator it = cartes.begin();
+    advance(it, indiceASupprimer);
+    cartes.erase(it);
+  }
+}
+
 void PaquetEvalue::afficherCartes() {
   for (Carte *c : cartes) {
     c->afficher();

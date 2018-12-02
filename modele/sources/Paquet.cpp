@@ -23,8 +23,16 @@ void Paquet::modifierCarte(Carte carte, std::string recto, std::string verso) {
   paquetFacile->modifierCarte(carte, recto, verso);
 }
 
+void Paquet::supprimerCarte(Carte carte) {
+  paquetFacile->supprimerCarte(carte);
+}
+
 void Paquet::afficherCartes() {
   paquetFacile->afficherCartes();
+}
+
+void Paquet::setNom(std::string nom) {
+  this->nom = nom;
 }
 
 std::string Paquet::getNom() {

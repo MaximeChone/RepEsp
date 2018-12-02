@@ -16,5 +16,13 @@ int main (int argc, char *argv[]) {
 
   re->afficherCartes(*p1);
 
+  re->supprimerCarte(*p1, *c1);
+
+  re->afficherCartes(*p1);
+
+  re->supprimerPaquet(*p1);
+
+  re->afficherPaquets();
+
   return EXIT_SUCCESS;
 }

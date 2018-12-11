@@ -43,3 +43,9 @@ void PaquetEvalue::afficherCartes() {
     c->afficher();
   }
 }
+
+Carte* PaquetEvalue::getCarte(int i) {
+    std::list<Carte*>::iterator it = cartes.begin();
+    std::advance(it, i);
+    return *it;
+}

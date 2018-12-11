@@ -55,3 +55,7 @@ size_t RepEsp::getNbPaquets() {
 Paquet* RepEsp::getPaquet(int i) {
     return this->paquets->getPaquet(i);
 }
+
+Carte* RepEsp::getCarte(int i, int j) {
+    return this->paquets->getCarte(i, j);
+}

@@ -91,3 +91,7 @@ Paquet* Paquets::getPaquet(int i) {
     std::advance(it, i);
     return *it;
 }
+
+Carte* Paquets::getCarte(int i, int j) {
+    return this->getPaquet(i)->getCarte(j);
+}

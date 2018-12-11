@@ -52,6 +52,28 @@ public:
     QLabel *label_3;
     QLineEdit *lineEdit_2;
     QPushButton *pushButton_2;
+    QWidget *tab_2;
+    QLabel *label_4;
+    QComboBox *comboBox_2;
+    QPushButton *pushButton_3;
+    QWidget *tab_3;
+    QLabel *label_5;
+    QComboBox *comboBox_3;
+    QLabel *label_6;
+    QLabel *label_7;
+    QLineEdit *lineEdit_3;
+    QLineEdit *lineEdit_4;
+    QPushButton *pushButton_4;
+    QWidget *tab_4;
+    QComboBox *comboBox_4;
+    QComboBox *comboBox_5;
+    QLabel *label_8;
+    QLabel *label_9;
+    QPushButton *pushButton_5;
+    QLabel *label_10;
+    QLabel *label_11;
+    QLineEdit *lineEdit_5;
+    QLineEdit *lineEdit_6;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -161,11 +183,77 @@ public:
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(350, 180, 161, 32));
         tabWidget->addTab(tab, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName(QString::fromUtf8("tab_2"));
+        label_4 = new QLabel(tab_2);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(240, 80, 131, 16));
+        comboBox_2 = new QComboBox(tab_2);
+        comboBox_2->setObjectName(QString::fromUtf8("comboBox_2"));
+        comboBox_2->setGeometry(QRect(380, 70, 231, 32));
+        pushButton_3 = new QPushButton(tab_2);
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        pushButton_3->setGeometry(QRect(320, 120, 114, 32));
+        tabWidget->addTab(tab_2, QString());
+        tab_3 = new QWidget();
+        tab_3->setObjectName(QString::fromUtf8("tab_3"));
+        label_5 = new QLabel(tab_3);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(160, 70, 241, 16));
+        comboBox_3 = new QComboBox(tab_3);
+        comboBox_3->setObjectName(QString::fromUtf8("comboBox_3"));
+        comboBox_3->setGeometry(QRect(420, 60, 231, 32));
+        label_6 = new QLabel(tab_3);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(350, 110, 59, 16));
+        label_7 = new QLabel(tab_3);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setGeometry(QRect(350, 140, 59, 16));
+        lineEdit_3 = new QLineEdit(tab_3);
+        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+        lineEdit_3->setGeometry(QRect(430, 110, 201, 21));
+        lineEdit_4 = new QLineEdit(tab_3);
+        lineEdit_4->setObjectName(QString::fromUtf8("lineEdit_4"));
+        lineEdit_4->setGeometry(QRect(430, 140, 201, 21));
+        pushButton_4 = new QPushButton(tab_3);
+        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+        pushButton_4->setGeometry(QRect(360, 190, 114, 32));
+        tabWidget->addTab(tab_3, QString());
+        tab_4 = new QWidget();
+        tab_4->setObjectName(QString::fromUtf8("tab_4"));
+        comboBox_4 = new QComboBox(tab_4);
+        comboBox_4->setObjectName(QString::fromUtf8("comboBox_4"));
+        comboBox_4->setGeometry(QRect(480, 80, 241, 32));
+        comboBox_5 = new QComboBox(tab_4);
+        comboBox_5->setObjectName(QString::fromUtf8("comboBox_5"));
+        comboBox_5->setGeometry(QRect(480, 130, 241, 32));
+        label_8 = new QLabel(tab_4);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setGeometry(QRect(240, 90, 241, 16));
+        label_9 = new QLabel(tab_4);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setGeometry(QRect(360, 140, 111, 16));
+        pushButton_5 = new QPushButton(tab_4);
+        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
+        pushButton_5->setGeometry(QRect(410, 260, 114, 32));
+        label_10 = new QLabel(tab_4);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+        label_10->setGeometry(QRect(420, 180, 59, 16));
+        label_11 = new QLabel(tab_4);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+        label_11->setGeometry(QRect(420, 220, 59, 16));
+        lineEdit_5 = new QLineEdit(tab_4);
+        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
+        lineEdit_5->setGeometry(QRect(480, 180, 231, 21));
+        lineEdit_6 = new QLineEdit(tab_4);
+        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
+        lineEdit_6->setGeometry(QRect(480, 220, 231, 21));
+        tabWidget->addTab(tab_4, QString());
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -191,6 +279,20 @@ public:
         label_3->setText(QApplication::translate("MainWindow", "Nouveau nom du paquet :", nullptr));
         pushButton_2->setText(QApplication::translate("MainWindow", "Renommer le paquet", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Renommer un paquet", nullptr));
+        label_4->setText(QApplication::translate("MainWindow", "Paquet \303\240 supprimer :", nullptr));
+        pushButton_3->setText(QApplication::translate("MainWindow", "Supprimer", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Supprimer un paquet", nullptr));
+        label_5->setText(QApplication::translate("MainWindow", "Paquet dans lequel ajouter une carte :", nullptr));
+        label_6->setText(QApplication::translate("MainWindow", "Recto :", nullptr));
+        label_7->setText(QApplication::translate("MainWindow", "Verso :", nullptr));
+        pushButton_4->setText(QApplication::translate("MainWindow", "Cr\303\251er", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Ajouter une carte", nullptr));
+        label_8->setText(QApplication::translate("MainWindow", "Paquet contenant la carte \303\240 modifier :", nullptr));
+        label_9->setText(QApplication::translate("MainWindow", "Carte \303\240 modifier :", nullptr));
+        pushButton_5->setText(QApplication::translate("MainWindow", "Modifier", nullptr));
+        label_10->setText(QApplication::translate("MainWindow", "Recto :", nullptr));
+        label_11->setText(QApplication::translate("MainWindow", "Verso :", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("MainWindow", "Modifier une carte", nullptr));
     } // retranslateUi
 
 };

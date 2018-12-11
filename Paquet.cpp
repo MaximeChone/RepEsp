@@ -42,3 +42,7 @@ std::string Paquet::getNom() {
 bool Paquet::equals(Paquet p) {
   return (getNom().compare(p.getNom()) == 0);
 }
+
+Carte* Paquet::getCarte(int i) {
+    return this->paquetFacile->getCarte(i);
+}

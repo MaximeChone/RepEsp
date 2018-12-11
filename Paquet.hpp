@@ -22,6 +22,8 @@ public:
   std::string getNom();
   bool equals(Paquet p);
 
+  Carte* getCarte(int i);
+
 protected:
   std::string nom;
   PaquetEvalue *paquetFacile;

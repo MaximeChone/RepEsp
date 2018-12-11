@@ -15,6 +15,8 @@ public:
   void supprimerCarte(Carte carte);
   void afficherCartes();
 
+  Carte* getCarte(int i);
+
 protected:
   std::list<Carte*> cartes;
 

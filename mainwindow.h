@@ -32,6 +32,8 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_pushButton_6_clicked();
+
 private:
     Ui::MainWindow *ui;
     RepEsp *re;
@@ -40,6 +42,10 @@ private:
     void majCombobox2();
     void majCombobox3();
     void majCombobox4();
+    void majCombobox5();
+    void majCombobox6();
+    void majCombobox7();
+
 };
 
 #endif // MAINWINDOW_H

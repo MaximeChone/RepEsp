@@ -74,6 +74,12 @@ public:
     QLabel *label_11;
     QLineEdit *lineEdit_5;
     QLineEdit *lineEdit_6;
+    QWidget *tab_5;
+    QLabel *label_12;
+    QLabel *label_13;
+    QComboBox *comboBox_6;
+    QComboBox *comboBox_7;
+    QPushButton *pushButton_6;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -249,11 +255,29 @@ public:
         lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
         lineEdit_6->setGeometry(QRect(480, 220, 231, 21));
         tabWidget->addTab(tab_4, QString());
+        tab_5 = new QWidget();
+        tab_5->setObjectName(QString::fromUtf8("tab_5"));
+        label_12 = new QLabel(tab_5);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+        label_12->setGeometry(QRect(190, 90, 251, 16));
+        label_13 = new QLabel(tab_5);
+        label_13->setObjectName(QString::fromUtf8("label_13"));
+        label_13->setGeometry(QRect(310, 130, 121, 16));
+        comboBox_6 = new QComboBox(tab_5);
+        comboBox_6->setObjectName(QString::fromUtf8("comboBox_6"));
+        comboBox_6->setGeometry(QRect(460, 80, 231, 32));
+        comboBox_7 = new QComboBox(tab_5);
+        comboBox_7->setObjectName(QString::fromUtf8("comboBox_7"));
+        comboBox_7->setGeometry(QRect(460, 120, 231, 32));
+        pushButton_6 = new QPushButton(tab_5);
+        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
+        pushButton_6->setGeometry(QRect(400, 190, 114, 32));
+        tabWidget->addTab(tab_5, QString());
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(5);
+        tabWidget->setCurrentIndex(6);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -293,6 +317,10 @@ public:
         label_10->setText(QApplication::translate("MainWindow", "Recto :", nullptr));
         label_11->setText(QApplication::translate("MainWindow", "Verso :", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("MainWindow", "Modifier une carte", nullptr));
+        label_12->setText(QApplication::translate("MainWindow", "Paquet contenant la carte \303\240 supprimer :", nullptr));
+        label_13->setText(QApplication::translate("MainWindow", "Carte \303\240 supprimer :", nullptr));
+        pushButton_6->setText(QApplication::translate("MainWindow", "Supprimer", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow", "Supprimer une carte", nullptr));
     } // retranslateUi
 
 };

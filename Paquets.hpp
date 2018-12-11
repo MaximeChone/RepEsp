@@ -24,6 +24,7 @@ public:
   size_t getNbPaquets();
   Paquet* getPaquet(int i);
   Carte* getCarte(int i, int j);
+  size_t getNbCartes(int i);
 
 private:
   std::list<Paquet*> paquets;

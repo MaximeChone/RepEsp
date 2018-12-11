@@ -59,3 +59,7 @@ Paquet* RepEsp::getPaquet(int i) {
 Carte* RepEsp::getCarte(int i, int j) {
     return this->paquets->getCarte(i, j);
 }
+
+size_t RepEsp::getNbCartes(int i) {
+    return this->paquets->getNbCartes(i);
+}

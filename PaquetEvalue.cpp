@@ -49,3 +49,7 @@ Carte* PaquetEvalue::getCarte(int i) {
     std::advance(it, i);
     return *it;
 }
+
+std::list<Carte*> PaquetEvalue::getCartes() {
+    return this->cartes;
+}

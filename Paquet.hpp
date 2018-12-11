@@ -23,6 +23,7 @@ public:
   bool equals(Paquet p);
 
   Carte* getCarte(int i);
+  size_t getNbCartes();
 
 protected:
   std::string nom;

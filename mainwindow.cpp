@@ -56,11 +56,35 @@ void MainWindow::majCombobox4() {
     }
 }
 
+void MainWindow::majCombobox5() {
+    ui->comboBox_5->clear();
+    for (int i = 0; i < re->getNbCartes(ui->comboBox_4->currentIndex()); i++) {
+        ui->comboBox_5->addItem(QString::fromStdString(re->getCarte(ui->comboBox_4->currentIndex(), i)->getRecto()));
+    }
+}
+
+void MainWindow::majCombobox6() {
+    ui->comboBox_6->clear();
+    for (int i = 0; i < re->getNbPaquets(); i++) {
+        ui->comboBox_6->addItem(QString::fromStdString(re->getPaquet(i)->getNom()));
+    }
+}
+
+void MainWindow::majCombobox7() {
+    ui->comboBox_7->clear();
+    for (int i = 0; i < re->getNbCartes(ui->comboBox_4->currentIndex()); i++) {
+        ui->comboBox_7->addItem(QString::fromStdString(re->getCarte(ui->comboBox_4->currentIndex(), i)->getRecto()));
+    }
+}
+
 void MainWindow::majCombobox() {
     majCombobox1();
     majCombobox2();
     majCombobox3();
     majCombobox4();
+    majCombobox5();
+    majCombobox6();
+    majCombobox7();
 }
 
 void MainWindow::on_pushButton_2_clicked()
@@ -91,9 +115,17 @@ void MainWindow::on_pushButton_4_clicked()
     re->ajouterCarte(*re->getPaquet(ui->comboBox_2->currentIndex()), ui->lineEdit_3->text().toStdString(), ui->lineEdit_4->text().toStdString());
     ui->lineEdit_3->clear();
     ui->lineEdit_4->clear();
+    majCombobox();
 }
 
 void MainWindow::on_pushButton_5_clicked()
 {
     re->modifierCarte(*re->getPaquet(ui->comboBox_4->currentIndex()), *re->getCarte(ui->comboBox_4->currentIndex(), ui->comboBox_5->currentIndex()), ui->lineEdit_5->text().toStdString(), ui->lineEdit_6->text().toStdString());
+    majCombobox();
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    re->supprimerCarte(*re->getPaquet(ui->comboBox_6->currentIndex()), *re->getCarte(ui->comboBox_6->currentIndex(), ui->comboBox_7->currentIndex()));
+    majCombobox();
 }

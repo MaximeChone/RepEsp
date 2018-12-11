@@ -46,3 +46,7 @@ bool Paquet::equals(Paquet p) {
 Carte* Paquet::getCarte(int i) {
     return this->paquetFacile->getCarte(i);
 }
+
+size_t Paquet::getNbCartes() {
+    return this->paquetFacile->getCartes().size();
+}

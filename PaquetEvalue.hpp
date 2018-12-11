@@ -16,6 +16,7 @@ public:
   void afficherCartes();
 
   Carte* getCarte(int i);
+  std::list<Carte*> getCartes();
 
 protected:
   std::list<Carte*> cartes;

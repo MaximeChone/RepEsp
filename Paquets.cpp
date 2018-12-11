@@ -95,3 +95,7 @@ Paquet* Paquets::getPaquet(int i) {
 Carte* Paquets::getCarte(int i, int j) {
     return this->getPaquet(i)->getCarte(j);
 }
+
+size_t Paquets::getNbCartes(int i) {
+    return this->getPaquet(i)->getNbCartes();
+}

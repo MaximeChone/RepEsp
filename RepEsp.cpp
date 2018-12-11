@@ -47,3 +47,11 @@ void RepEsp::afficherPaquets() {
   std::cout << std::endl << "(Paquets) RepEsp :" << std::endl << std::endl;
   paquets->afficherPaquets();
 }
+
+size_t RepEsp::getNbPaquets() {
+    return this->paquets->getNbPaquets();
+}
+
+Paquet* RepEsp::getPaquet(int i) {
+    return this->paquets->getPaquet(i);
+}

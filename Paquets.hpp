@@ -21,6 +21,9 @@ public:
   void afficherCartes(Paquet paquet);
   void afficherPaquets();
 
+  size_t getNbPaquets();
+  Paquet* getPaquet(int i);
+
 private:
   std::list<Paquet*> paquets;
 

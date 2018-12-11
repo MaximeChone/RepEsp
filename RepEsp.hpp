@@ -22,6 +22,9 @@ public:
   void afficherCartes(Paquet nomPaquet);
   void afficherPaquets();
 
+  size_t getNbPaquets();
+  Paquet* getPaquet(int i);
+
 private:
   Paquets *paquets;
 

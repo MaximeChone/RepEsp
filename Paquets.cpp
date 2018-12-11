@@ -81,3 +81,13 @@ void Paquets::afficherPaquets() {
     std::cout << "Paquet : " << p->getNom() << std::endl;
   }
 }
+
+size_t Paquets::getNbPaquets() {
+    return this->paquets.size();
+}
+
+Paquet* Paquets::getPaquet(int i) {
+    std::list<Paquet*>::iterator it = paquets.begin();
+    std::advance(it, i);
+    return *it;
+}

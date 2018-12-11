@@ -4,13 +4,15 @@
 
 int main(int argc, char *argv[])
 {
+    RepEsp *re = new RepEsp();
+    Paquet *p = new Paquet("Anglais::Francais");
+    Paquet *p2 = new Paquet("Espagnol::Anglais");
+    re->ajouterPaquet(p);
+    re->ajouterPaquet(p2);
+
     QApplication a(argc, argv);
-    MainWindow w;
+    MainWindow w(re);
     w.show();
-
-    Test *t = new Test();
-
-    t->test();
 
     return a.exec();
 }

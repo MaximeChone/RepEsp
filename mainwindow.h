@@ -34,6 +34,16 @@ private slots:
 
     void on_pushButton_6_clicked();
 
+    void on_boutonCreerCarte_clicked();
+
+    void on_boutonModifierCarte_clicked();
+
+    void on_boutonSupprimerCarte_clicked();
+
+    void on_boutonSupprimerPaquet_clicked();
+
+    void on_bouton_maison_clicked();
+
 private:
     Ui::MainWindow *ui;
     RepEsp *re;

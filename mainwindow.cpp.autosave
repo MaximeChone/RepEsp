@@ -145,27 +145,19 @@ void MainWindow::on_boutonCreerCarte_clicked()
 void MainWindow::on_boutonModifierCarte_clicked()
 {
     ui->tabWidget->setCurrentIndex(TAB_MODIFIER_CARTE);
-
 }
-
-
 
 void MainWindow::on_boutonSupprimerCarte_clicked()
 {
     ui->tabWidget->setCurrentIndex(TAB_SUPPRIMER_CARTE);
-
 }
-
-
 
 void MainWindow::on_boutonSupprimerPaquet_clicked()
 {
     ui->tabWidget->setCurrentIndex(TAB_SUPPRIMER_PAQUET);
-
 }
 
 void MainWindow::on_bouton_maison_clicked()
 {
     ui->tabWidget->setCurrentIndex(TAB_HOME);
-
 }

@@ -42,6 +42,7 @@ public:
     QPushButton *boutonReviser;
     QPushButton *boutonExporter;
     QPushButton *boutonImporter;
+    QLabel *label_14;
     QWidget *CreerUnPaquito;
     QLineEdit *lineEdit;
     QLabel *label;
@@ -80,6 +81,7 @@ public:
     QComboBox *comboBox_6;
     QComboBox *comboBox_7;
     QPushButton *pushButton_6;
+    QPushButton *pushButton_7;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -158,6 +160,11 @@ public:
         boutonImporter = new QPushButton(PageDeGardos);
         boutonImporter->setObjectName(QString::fromUtf8("boutonImporter"));
         boutonImporter->setGeometry(QRect(500, 400, 431, 71));
+        label_14 = new QLabel(PageDeGardos);
+        label_14->setObjectName(QString::fromUtf8("label_14"));
+        label_14->setGeometry(QRect(230, 0, 511, 120));
+        label_14->setPixmap(QPixmap(QString::fromUtf8(":/res/res/repesp.png")));
+        label_14->setScaledContents(true);
         tabWidget->addTab(PageDeGardos, QString());
         CreerUnPaquito = new QWidget();
         CreerUnPaquito->setObjectName(QString::fromUtf8("CreerUnPaquito"));
@@ -273,11 +280,14 @@ public:
         pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
         pushButton_6->setGeometry(QRect(400, 190, 114, 32));
         tabWidget->addTab(tab_5, QString());
+        pushButton_7 = new QPushButton(centralwidget);
+        pushButton_7->setObjectName(QString::fromUtf8("pushButton_7"));
+        pushButton_7->setGeometry(QRect(840, 500, 114, 32));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(6);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -295,6 +305,7 @@ public:
         boutonReviser->setText(QApplication::translate("MainWindow", "R\303\251viser", nullptr));
         boutonExporter->setText(QApplication::translate("MainWindow", "Exporter un paquet", nullptr));
         boutonImporter->setText(QApplication::translate("MainWindow", "Importer un paquet", nullptr));
+        label_14->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(PageDeGardos), QApplication::translate("MainWindow", "Page de gardos", nullptr));
         label->setText(QApplication::translate("MainWindow", "Nom du paquet :", nullptr));
         pushButton->setText(QApplication::translate("MainWindow", "Cr\303\251er", nullptr));
@@ -321,6 +332,7 @@ public:
         label_13->setText(QApplication::translate("MainWindow", "Carte \303\240 supprimer :", nullptr));
         pushButton_6->setText(QApplication::translate("MainWindow", "Supprimer", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow", "Supprimer une carte", nullptr));
+        pushButton_7->setText(QApplication::translate("MainWindow", "Retour", nullptr));
     } // retranslateUi
 
 };

@@ -5,6 +5,10 @@
 #define TAB_HOME 0
 #define TAB_CREER_PAQUET 1
 #define TAB_RENOMMER_PAQUET 2
+#define TAB_SUPPRIMER_PAQUET 3
+#define TAB_CREER_CARTE 4
+#define TAB_RENOMMER_CARTE 5
+#define TAB_SUPPRIMER_CARTE 6
 
 MainWindow::MainWindow(RepEsp *re, QWidget *parent) :
     QMainWindow(parent),
@@ -13,7 +17,8 @@ MainWindow::MainWindow(RepEsp *re, QWidget *parent) :
     ui->setupUi(this);
     this->re = re;
     majCombobox();
-    Paquet* selectionCombobox;
+    ui->tabWidget->setCurrentIndex(TAB_HOME);
+    ui->tabWidget->tabBar()->hide();
 }
 
 MainWindow::~MainWindow()
@@ -30,50 +35,50 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::majCombobox1() {
     ui->comboBox->clear();
-    for (int i = 0; i < re->getNbPaquets(); i++) {
-        ui->comboBox->addItem(QString::fromStdString(re->getPaquet(i)->getNom()));
+    for (size_t i = 0; i < re->getNbPaquets(); i++) {
+        ui->comboBox->addItem(QString::fromStdString(re->getPaquet(static_cast<int>(i))->getNom()));
     }
 }
 
 void MainWindow::majCombobox2() {
     ui->comboBox_2->clear();
-    for (int i = 0; i < re->getNbPaquets(); i++) {
-        ui->comboBox_2->addItem(QString::fromStdString(re->getPaquet(i)->getNom()));
+    for (size_t i = 0; i < re->getNbPaquets(); i++) {
+        ui->comboBox_2->addItem(QString::fromStdString(re->getPaquet(static_cast<int>(i))->getNom()));
     }
 }
 
 void MainWindow::majCombobox3() {
     ui->comboBox_3->clear();
-    for (int i = 0; i < re->getNbPaquets(); i++) {
-        ui->comboBox_3->addItem(QString::fromStdString(re->getPaquet(i)->getNom()));
+    for (size_t i = 0; i < re->getNbPaquets(); i++) {
+        ui->comboBox_3->addItem(QString::fromStdString(re->getPaquet(static_cast<int>(i))->getNom()));
     }
 }
 
 void MainWindow::majCombobox4() {
     ui->comboBox_4->clear();
-    for (int i = 0; i < re->getNbPaquets(); i++) {
-        ui->comboBox_4->addItem(QString::fromStdString(re->getPaquet(i)->getNom()));
+    for (size_t i = 0; i < re->getNbPaquets(); i++) {
+        ui->comboBox_4->addItem(QString::fromStdString(re->getPaquet(static_cast<int>(i))->getNom()));
     }
 }
 
 void MainWindow::majCombobox5() {
     ui->comboBox_5->clear();
-    for (int i = 0; i < re->getNbCartes(ui->comboBox_4->currentIndex()); i++) {
-        ui->comboBox_5->addItem(QString::fromStdString(re->getCarte(ui->comboBox_4->currentIndex(), i)->getRecto()));
+    for (size_t i = 0; i < re->getNbCartes(ui->comboBox_4->currentIndex()); i++) {
+        ui->comboBox_5->addItem(QString::fromStdString(re->getCarte(ui->comboBox_4->currentIndex(), static_cast<int>(i))->getRecto()));
     }
 }
 
 void MainWindow::majCombobox6() {
     ui->comboBox_6->clear();
-    for (int i = 0; i < re->getNbPaquets(); i++) {
-        ui->comboBox_6->addItem(QString::fromStdString(re->getPaquet(i)->getNom()));
+    for (size_t i = 0; i < re->getNbPaquets(); i++) {
+        ui->comboBox_6->addItem(QString::fromStdString(re->getPaquet(static_cast<int>(i))->getNom()));
     }
 }
 
 void MainWindow::majCombobox7() {
     ui->comboBox_7->clear();
-    for (int i = 0; i < re->getNbCartes(ui->comboBox_4->currentIndex()); i++) {
-        ui->comboBox_7->addItem(QString::fromStdString(re->getCarte(ui->comboBox_4->currentIndex(), i)->getRecto()));
+    for (size_t i = 0; i < re->getNbCartes(ui->comboBox_4->currentIndex()); i++) {
+        ui->comboBox_7->addItem(QString::fromStdString(re->getCarte(ui->comboBox_4->currentIndex(), static_cast<int>(i))->getRecto()));
     }
 }
 
@@ -128,4 +133,29 @@ void MainWindow::on_pushButton_6_clicked()
 {
     re->supprimerCarte(*re->getPaquet(ui->comboBox_6->currentIndex()), *re->getCarte(ui->comboBox_6->currentIndex(), ui->comboBox_7->currentIndex()));
     majCombobox();
+}
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    ui->tabWidget->setCurrentIndex(TAB_HOME);
+}
+
+void MainWindow::on_boutonCreerCarte_clicked()
+{
+    ui->tabWidget->setCurrentIndex(TAB_CREER_CARTE);
+}
+
+void MainWindow::on_boutonModifierCarte_clicked()
+{
+    ui->tabWidget->setCurrentIndex(TAB_RENOMMER_CARTE);
+}
+
+void MainWindow::on_boutonSupprimerCarte_clicked()
+{
+    ui->tabWidget->setCurrentIndex(TAB_SUPPRIMER_CARTE);
+}
+
+void MainWindow::on_boutonSupprimerPaquet_clicked()
+{
+    ui->tabWidget->setCurrentIndex(TAB_SUPPRIMER_PAQUET);
 }

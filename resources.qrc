@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>res/repesp.png</file>
+    </qresource>
+</RCC>

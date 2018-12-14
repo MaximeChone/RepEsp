@@ -38,7 +38,6 @@ SOURCES += \
         Test.cpp
 
 HEADERS += \
-        mainwindow.h \
         Carte.hpp \
         mainwindow.h \
         Paquet.hpp \
@@ -60,3 +59,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 SUBDIRS += \
     RepEsp.pro
+
+RESOURCES += \
+    resources.qrc

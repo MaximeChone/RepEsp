@@ -60,7 +60,8 @@ SOURCES       = ../../Carte.cpp \
 		../../PaquetMoyen.cpp \
 		../../Paquets.cpp \
 		../../RepEsp.cpp \
-		../../Test.cpp moc_mainwindow.cpp
+		../../Test.cpp qrc_resources.cpp \
+		moc_mainwindow.cpp
 OBJECTS       = Carte.o \
 		main.o \
 		mainwindow.o \
@@ -72,6 +73,7 @@ OBJECTS       = Carte.o \
 		Paquets.o \
 		RepEsp.o \
 		Test.o \
+		qrc_resources.o \
 		moc_mainwindow.o
 DIST          = /Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/features/spec_pre.prf \
 		/Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/qdevice.pri \
@@ -263,8 +265,7 @@ DIST          = /Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/features/spec_pre.p
 		/Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/features/exceptions.prf \
 		/Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/features/yacc.prf \
 		/Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/features/lex.prf \
-		../../../../RepEsp.pro ../../mainwindow.h \
-		../../Carte.hpp \
+		../../../../RepEsp.pro ../../Carte.hpp \
 		../../mainwindow.h \
 		../../Paquet.hpp \
 		../../PaquetDifficile.hpp \
@@ -496,6 +497,7 @@ Makefile: ../../RepEsp.pro /Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/macx-cla
 		/Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/features/yacc.prf \
 		/Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/features/lex.prf \
 		../../RepEsp.pro \
+		../../resources.qrc \
 		/Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtWidgets.framework/QtWidgets_debug.prl \
 		/Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtGui.framework/QtGui_debug.prl \
 		/Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtCore.framework/QtCore_debug.prl
@@ -691,6 +693,7 @@ Makefile: ../../RepEsp.pro /Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/macx-cla
 /Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/features/yacc.prf:
 /Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/features/lex.prf:
 ../../RepEsp.pro:
+../../resources.qrc:
 /Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtWidgets.framework/QtWidgets_debug.prl:
 /Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtGui.framework/QtGui_debug.prl:
 /Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtCore.framework/QtCore_debug.prl:
@@ -723,8 +726,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
+	$(COPY_FILE) --parents ../../resources.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../mainwindow.h ../../Carte.hpp ../../mainwindow.h ../../Paquet.hpp ../../PaquetDifficile.hpp ../../PaquetEvalue.hpp ../../PaquetFacile.hpp ../../PaquetMoyen.hpp ../../Paquets.hpp ../../RepEsp.hpp ../../Test.hpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../Carte.hpp ../../mainwindow.h ../../Paquet.hpp ../../PaquetDifficile.hpp ../../PaquetEvalue.hpp ../../PaquetFacile.hpp ../../PaquetMoyen.hpp ../../Paquets.hpp ../../RepEsp.hpp ../../Test.hpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../../Carte.cpp ../../main.cpp ../../mainwindow.cpp ../../Paquet.cpp ../../PaquetDifficile.cpp ../../PaquetEvalue.cpp ../../PaquetFacile.cpp ../../PaquetMoyen.cpp ../../Paquets.cpp ../../RepEsp.cpp ../../Test.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../../mainwindow.ui $(DISTDIR)/
 
@@ -750,26 +754,33 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_resources.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_resources.cpp
+qrc_resources.cpp: ../../resources.qrc \
+		/Users/nicolasklz/Qt/5.12.0/clang_64/bin/rcc \
+		../../res/repesp.png
+	/Users/nicolasklz/Qt/5.12.0/clang_64/bin/rcc -name resources ../../resources.qrc -o qrc_resources.cpp
+
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
 moc_predefs.h: /Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/features/data/dummy.cpp
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.12 -Wall -W -dM -E -o moc_predefs.h /Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_mainwindow.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp
 moc_mainwindow.cpp: /Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../../mainwindow.h \
-		moc_predefs.h \
-		/Users/nicolasklz/Qt/5.12.0/clang_64/bin/moc
-	/Users/nicolasklz/Qt/5.12.0/clang_64/bin/moc $(DEFINES) --include /Users/nicolasklz/Documents/UL/L3/S5/CPOA/RepEsp/modele/build-RepEsp-Desktop_Qt_5_12_0_clang_64bit-Debug/moc_predefs.h -I/Users/nicolasklz/Qt/5.12.0/clang_64/mkspecs/macx-clang -I/Users/nicolasklz/Documents/UL/L3/S5/CPOA/RepEsp -I/Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtGui.framework/Headers -I/Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/nicolasklz/Qt/5.12.0/clang_64/lib ../../mainwindow.h -o moc_mainwindow.cpp
-
-moc_mainwindow.cpp: /Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		/Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../RepEsp.hpp \
+		../../Paquet.hpp \
+		../../PaquetEvalue.hpp \
+		../../Carte.hpp \
+		../../PaquetFacile.hpp \
+		../../PaquetMoyen.hpp \
+		../../PaquetDifficile.hpp \
+		../../Paquets.hpp \
 		../../mainwindow.h \
 		moc_predefs.h \
 		/Users/nicolasklz/Qt/5.12.0/clang_64/bin/moc
@@ -794,7 +805,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -804,7 +815,6 @@ Carte.o: ../../Carte.cpp ../../Carte.hpp
 main.o: ../../main.cpp ../../mainwindow.h \
 		/Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../../Test.hpp \
 		../../RepEsp.hpp \
 		../../Paquet.hpp \
 		../../PaquetEvalue.hpp \
@@ -813,6 +823,7 @@ main.o: ../../main.cpp ../../mainwindow.h \
 		../../PaquetMoyen.hpp \
 		../../PaquetDifficile.hpp \
 		../../Paquets.hpp \
+		../../Test.hpp \
 		/Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		/Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../main.cpp
@@ -820,6 +831,14 @@ main.o: ../../main.cpp ../../mainwindow.h \
 mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		/Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/nicolasklz/Qt/5.12.0/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../RepEsp.hpp \
+		../../Paquet.hpp \
+		../../PaquetEvalue.hpp \
+		../../Carte.hpp \
+		../../PaquetFacile.hpp \
+		../../PaquetMoyen.hpp \
+		../../PaquetDifficile.hpp \
+		../../Paquets.hpp \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../../mainwindow.cpp
 
@@ -883,6 +902,9 @@ Test.o: ../../Test.cpp ../../Test.hpp \
 		../../PaquetDifficile.hpp \
 		../../Paquets.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Test.o ../../Test.cpp
+
+qrc_resources.o: qrc_resources.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resources.o qrc_resources.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
